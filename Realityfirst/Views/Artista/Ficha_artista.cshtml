@@ -1,0 +1,53 @@
+﻿@using RealityFirst.Models
+
+@{
+    ViewData["Title"] = "Artistas";
+}
+
+
+  
+
+
+
+<div class="container" align="center">
+    <h1 class="display-2 text-white">@Model.nombre</h1>
+    <br><br><br>
+</div>
+
+<div class="card bg-secondary text-black bg-opacity-0 rounded-3 shadow">
+  <img src="@Model.foto" class="container-fluid" width="30%" height="20%">
+  <div class="card-img-overlay ">
+  </div>
+</div>
+<br>   
+<br>
+
+<div class="card text-center bg-secondary text-white bg-opacity-0 rounded-3">
+  <div class="card-header">
+    <h1 class="display-6">Eventos</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Nombre: @Model.nombre</h5>
+    <p class="card-text">Edad: @Model.edad</p>
+    <p class="card-text">Fecha nacimiento: @Model.fecha_nacimiento</p>
+    <p class="card-text">Genero : @Model.genero</p>
+    <p class="card-text"></p>
+    <a href="/Evento/Eventos/@Model.id" class="btn btn-dark">eventos</a>
+  </div>
+  <div class="card-footer text-muted">
+    -
+  </div>
+</div>
+
+<br><br><br>
+
+<div class="row g-2 position-relative bg-secondary text-white bg-opacity-0 rounded-3">
+    <div class="col-md-6 mb-md-0 p-md-4">
+    <img src="@Model.foto_noticia" class="w-100" alt="...">
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+    <h5 class="mt-0">@Model.titulo</h5>
+    <p>@Model.contenido</p>
+    <p>Escritor: @Model.escritor / Editor: @Model.editor</p>
+    </div>
+</div>

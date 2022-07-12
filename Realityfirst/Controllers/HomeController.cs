@@ -39,12 +39,6 @@ namespace RealityFirst.Controllers
             return View();
         }
 
-        public IActionResult IniciarSesion()
-        {
-            HttpContext.Session.Remove("usuario");
-            return RedirectToAction("Login", "Acceso");
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

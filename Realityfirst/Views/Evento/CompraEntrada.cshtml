@@ -17,13 +17,13 @@
             <div class="p-3 border bg-dark bg-opacity-25 text-white">Nombre del evento: @Model.nombre_evento </div>
         </div>
         <div class="col-6" align="center">
-            <div class="p-3 border bg-dark bg-opacity-25 text-white">Lugar del evento: @Model.lugar_evento </div>
+            <div class="p-3 border bg-dark bg-opacity-25 text-white">Lugar del evento: @Model.lugar_evento</div>
         </div>
         <div class="col-6" align="center">
             <div class="p-3 border bg-dark bg-opacity-25 text-white">Nombre del artista: @Model.nombre_artista </div>
         </div>
         <div class="col-6" align="center">
-            <div class="p-3 border bg-dark bg-opacity-25 text-white">Fecha y hora del evento: @Model.fecha_evento  @Model.inicio hasta @Model.fin</div>
+            <div class="p-3 border bg-dark bg-opacity-25 text-white">Fecha y hora del evento: @Model.fecha_evento  @Model.inicio HRS </div>
         </div>
         </div>
     </div>
@@ -40,11 +40,6 @@
           <option value="5">Cancha $60.000</option>
           <option value="6">VIP $100.000</option>
         </select>
-        <br>
-        <h1 class="display-6 text-white"> Lugar y valor de las entradas </h1>
-        <img src="~/imagen/mostrarlugarentrada.png" class="img-fluid">
-        <br>
-        <br>
     </div>
 
     <div class="container border-top" align="center">
@@ -64,7 +59,18 @@
             <input type="text" class="form-control" placeholder="kiritojadsZZZomg777rexKun" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <span class="input-group-text" id="basic-addon2">gmail.com</span>
         </div>
-  
+          <div align="center" class="border-top">
+        <br><br>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Seleccione el tipo de entrada</option>
+          <option value="1">Platea alta $20.000</option>
+          <option value="2">Platea Baja $30.000</option>
+          <option value="4">Primera fila $45.000</option>
+          <option value="5">Cancha $60.000</option>
+          <option value="6">VIP $100.000</option>
+        </select>
+         </div>
+         <br><br>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon3">Número Teléfono:</span>
             <input type="text" class="form-control" id="basic-url" placeholder="+56 9 9999 9999" aria-describedby="basic-addon3">

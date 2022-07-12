@@ -25,10 +25,10 @@
           <thead>
             <tr>
               <th scope="col">Artista</th>
-              <th scope="col">Nombre evento</th>
-              <th scope="col">Lugar evento</th>
-              <th scope="col">Fecha y hora</th>
-              <th scope="col">ver mas detalles</th>
+              <th scope="col">Evento</th>
+              <th scope="col">Lugar</th>
+              <th scope="col">Fechaa</th>
+              <th scope="col">ver</th>
             </tr>
           </thead>
           <tbody id="tabla">
@@ -38,13 +38,14 @@
                         <td>@evento.nombre_artista</td>
                         <td>@evento.nombre_evento</td>
                         <td>@evento.lugar_evento</td>
-                        <td>@evento.fecha_evento: @evento.inicio hasta @evento.fin</td>
-                        <td><a href="/Evento/Eventos/@evento.id_artista" class="btn btn-dark text-white">Ver mas detalles</a></td>
+                        <td>@evento.fecha_evento: @evento.inicio Horas</td>
+                        <td><a href="/Evento/Eventos/@evento.id_artista" class="btn btn-dark text-white">Ver</a></td>
                   </tr>
              }
           </tbody>
     </div>
-      
+     
+
     <!-- Java Script -->
     
 @section Scripts{

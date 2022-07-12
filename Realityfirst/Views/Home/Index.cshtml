@@ -1,4 +1,5 @@
-﻿@{
+﻿@using RealityFirst.Models
+@{
     ViewData["Title"] = "Inicio";
 }
    
@@ -19,7 +20,7 @@
 <body style="background-color:rgba(24, 24, 24, 0.959);"> 
 <div class="container" align = >
   <br>
-  <h1 class="display-4" style="color:white;">Realty First  <img src="~/img/logo_transparent.png" width=100px></h1>
+  <h1 class="display-4" style="color:white;">Reality First  <img src="~/img/logo_transparent.png" width=100px></h1>
   <h1 class="display-6" style="color:white;">Ven y comparte con tus amigos de nuestros nuevos invitados  <br> y encuentra tus artistas favoritos</h1>
   <br>
 </div>
@@ -119,12 +120,57 @@
   <br>
   <br>
   <div class="container">
-  <h1> Noticias </h1>
+  <h1 style="color:white;"> Noticias </h1>
+  <br>
+  <br>
+   @foreach (ArtistaModel artista in Model){
+                
+  <body class="grey lighten-2">
+  <div class="container">
+    <div class="col s12 m7">
+
+      <div class="card horizontal">
+        <div class="card-image">
+          <img class="card-img-top" src="@artista.foto_noticia" alt="Card image cap" width="30%" >
+        </div>
+        <div class="card-stacked">
+          <div class="card text-white bg-dark mb-3">
+            <span class="card-title">Cantante: @artista.nombre</span>
+            <h2>Titulo: @artista.titulo</h2>
+            <p>@artista.contenido
+              </p>
+            <p>@artista.escritor / @artista.editor</p>
+          </div>          
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+</body>
+
+}
+
   </div>
 </body> 
 
+@section Styles {
+    <style>
+        .fadedfx {
+  background-color: #fe5652;
+  visibility: hidden;
+}
 
+.fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
 
+    </style>
+}
 
 
 

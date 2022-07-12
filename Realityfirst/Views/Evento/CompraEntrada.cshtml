@@ -10,38 +10,10 @@
     <br><br>
 </div>
 
-<div class="container shadow-lg p-3 mb-5 bg-dark bg-opacity-75 rounded-3">
-    <div class="container rounded-3">
-        <div class="row g-2 rounded-3">
-        <div class="col-6" align="center">
-            <div class="p-3 border bg-dark bg-opacity-25 text-white">Nombre del evento: @Model.nombre_evento </div>
-        </div>
-        <div class="col-6" align="center">
-            <div class="p-3 border bg-dark bg-opacity-25 text-white">Lugar del evento: @Model.lugar_evento</div>
-        </div>
-        <div class="col-6" align="center">
-            <div class="p-3 border bg-dark bg-opacity-25 text-white">Nombre del artista: @Model.nombre_artista </div>
-        </div>
-        <div class="col-6" align="center">
-            <div class="p-3 border bg-dark bg-opacity-25 text-white">Fecha y hora del evento: @Model.fecha_evento  @Model.inicio HRS </div>
-        </div>
-        </div>
-    </div>
+<div class="container shadow-lg p-3 mb-5 bg-dark bg-opacity-0 rounded-3">
+    
 
     <br>
-
-    <div align="center" class="border-top">
-        <br>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Seleccione el tipo de entrada</option>
-          <option value="1">Platea alta $20.000</option>
-          <option value="2">Platea Baja $30.000</option>
-          <option value="4">Primera fila $45.000</option>
-          <option value="5">Cancha $60.000</option>
-          <option value="6">VIP $100.000</option>
-        </select>
-    </div>
-
     <div class="container border-top" align="center">
         <br>
         <h1 class="display-6 text-white"> Datos Personales </h1>
@@ -51,26 +23,26 @@
     <div class="container">
         <!--Datos Personales-->
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Nombre Completo:</span>
-            <input type="text" class="form-control" placeholder="Pitt O'Corrto" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text" id="basic-addon1">Nombre:</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-    
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="kiritojadsZZZomg777rexKun" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <span class="input-group-text" id="basic-addon2">gmail.com</span>
+            <span class="input-group-text">RUT</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username">
+            <span class="input-group-text">-</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Server">
         </div>
-          <div align="center" class="border-top">
-        <br><br>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Seleccione el tipo de entrada</option>
-          <option value="1">Platea alta $20.000</option>
-          <option value="2">Platea Baja $30.000</option>
-          <option value="4">Primera fila $45.000</option>
-          <option value="5">Cancha $60.000</option>
-          <option value="6">VIP $100.000</option>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Correo:</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <select class="form-select" aria-label="Default select example">
+          <option selected>gmail.com</option>
+          <option value="1">hotmail.com</option>
+          <option value="2">duocuc.cl</option>
+          <option value="4">Outlook.com</option>
         </select>
-         </div>
-         <br><br>
+        </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon3">Número Teléfono:</span>
             <input type="text" class="form-control" id="basic-url" placeholder="+56 9 9999 9999" aria-describedby="basic-addon3">
@@ -80,26 +52,47 @@
             <span class="input-group-text">Dirección:</span>
             <input type="text" class="form-control" placeholder="En Mi Casa 5754" aria-label="Amount (to the nearest dollar)">
         </div>
-    
-        <div class="input-group mb-3">
-            <span class="input-group-text">R.U.T</span>
-            <input type="text" class="form-control" placeholder="99.999.999" aria-label="Username">
-            <span class="input-group-text">-</span>
-            <input type="text" class="form-control" placeholder="9" aria-label="Server">
-        </div>
         <br><br>
-    
+        <div class="container border-top" align="center">
+        <br>
+        <h1 class="display-6 text-white"> Datos del Evento </h1>
+        <br>
+    </div>
+
+    <div class="container">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre del evento: @Model.nombre_evento</span>  
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Lugar del evento: @Model.lugar_evento</span>  
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre del artista: @Model.nombre_artista</span>  
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Fecha y hora del evento: @Model.fecha_evento  @Model.inicio HRS</span>  
+        </div>
+
+        <div align="center" class="border-top">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Seleccione el tipo de entrada</option>
+          <option value="1">Platea alta $20.000</option>
+          <option value="2">Platea Baja $30.000</option>
+          <option value="4">Primera fila $45.000</option>
+          <option value="5">Cancha $60.000</option>
+          <option value="6">VIP $100.000</option>
+        </select>
+         </div>
         <!--Metodo de Pago-->
         <div class="container border-top" align="center">
             <br>
-            <h1 class="display-6 text-white"> Datos Personales </h1>
+            <h1 class="display-6 text-white"> Pagar </h1>
             <br>
         </div>
         <div align=center>
             <table>
             <tr class="container">
-                <th><button type="button" class="btn btn-secondary btn-lg" disabled><img src="~/imagen/Onepay.png" width=89%></button></th>
-                <th><button type="button" class="btn btn-secondary btn-lg" disabled><img src="~/imagen/Webpay.png" width=100%></button></th>
+                <th><button type="button" class="btn btn-secondary btn-lg" disabled><img src="~/img/carrocompra.jpg" width=30%></button></th>               
             </tr>
             </table>  
         </div>

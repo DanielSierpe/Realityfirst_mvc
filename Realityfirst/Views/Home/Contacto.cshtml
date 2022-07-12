@@ -1,5 +1,48 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Contacto";
 }
+
+<div class="container" >
+    <nav class="rounded-pill shadow bg-light" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb align-content-center">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index"><div class="bg-image hover-overlay"><img src="~/imagen/icono_index.png" style="width: 30px;"></div></a></li>
+            <li class="breadcrumb-item active"><a>Contacto</a></li>
+        </ol>
+    </nav>
+</div> 
+<br>
+<div class="row g-2 bg-secondary text-white bg-opacity-75 rounded-3">
+    <div class="col-md-6 mb-md-0 p-md-4">
+        <div class="hovereffect">
+            <img class="img-responsive rounded-3" src="~/imagen/logoReality.png"  alt="">
+                <div class="overlay">
+                    <h1><i style="font-size: 2rem;">Nuestras Redes Sociales</i></h1>
+				    <p>
+					    <a href="https://www.instagram.com/realityfirstofficial/">
+                            <i class="bi bi-instagram" style="font-size: 3.5rem;">  </i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100082750901454">
+                            <i class="bi bi-facebook" style="font-size: 3.5rem;">  </i>
+                        </a>
+                        <a href="https://twitter.com/RealityFirst6">
+                            <i class="bi bi-twitter" style="font-size: 3.5rem;">  </i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-envelope" onclick="swal('Aquí está nuestro correo electrónico!', 'RealityFirstOfficial@gmail.com', 'https://i.ibb.co/L5FkJ2V/correo.gif')" style="font-size: 3.5rem;"></i>
+                        </a>
+				    </p>
+                </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-md-0 p-md-4">
+        <h1 class="mt-0">Reality First</h1>
+        <p>Hola Visitante! 👋😊, queremos que nos conozcas mejor por lo que te contaremos 
+           que somos una productora de eventos y también de venta de entradas, tenemos
+           artistas que probablemente te interesen como el mismísimo "Bad Bunny" 🐰, "Metallica"🎸, 
+           "Lil Peep"💀 y más!, actualmente tenemos a la venta entradas para futuros conciertos y 
+           festivales que tienen los artistas ¡AQUI!, así es, AQUI en Chile, revisa nuestras redes
+           sociales para más información poniendo el mouse encima de la imagen de la izquierda.</p>
+        <h4>🍏🍎🍐🍊🍋🍌Si algún día vienes a nuestras oficinas, ¡TRAENOS FRUTA!🍉🍓🍇🍓🍈🍒</h4>
+    </div>
+</div>
+

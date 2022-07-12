@@ -1,5 +1,64 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using RealityFirst.Models
+
 @{
+    ViewData["Title"] = "Artistas";
 }
+
+
+  
+
+<div class="container" >
+    <nav class="rounded-pill shadow bg-light"  aria-label="breadcrumb">
+        <ol class="breadcrumb align-content-center">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index"><div class="bg-image hover-overlay"></div></a></li>
+            <li class="breadcrumb-item"><a style="text-decoration: none;" asp-controller="Artista" asp-action="Artista">Artistas</a></li>
+            <li class="breadcrumb-item active"><a>Ficha @Model.nombre</a></li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container" align="center">
+    <h1 class="display-2 text-white"> Informacion relacionada con @Model.nombre</h1>
+    <br><br><br>
+</div>
+
+<div class="card bg-secondary text-black bg-opacity-75 rounded-3 shadow">
+  <img src="@Model.foto" class="card-img" alt="...">
+  <div class="card-img-overlay ">
+    <h5 class="card-title">Nombre: @Model.nombre</h5>
+    <p class="card-text">Edad: @Model.edad</p>
+    <p class="card-text">Fecha nacimiento: @Model.fecha_nacimiento</p>
+    <p class="card-text">Genero musical: @Model.genero</p>
+  </div>
+</div>
+
+<br>
+
+<div class="card text-center bg-secondary text-white bg-opacity-75 rounded-3">
+  <div class="card-header">
+    <h1 class="display-6">¡Atencion!</h1>
+  </div>
+  <div class="card-body">
+    <img src="~/imagen/atencioncompra.png" width="150px"/>
+    <h5 class="card-title">Te invitamos a revisar los eventos proximos de @Model.nombre</h5>
+    <p class="card-text">Presiona en el boton de aqui abajo para ver los eventos</p>
+    <a href="/Evento/Eventos/@Model.id" class="btn btn-dark">Ver eventos</a>
+  </div>
+  <div class="card-footer text-muted">
+    -
+  </div>
+</div>
+
+<br><br><br>
+
+<div class="row g-2 position-relative bg-secondary text-white bg-opacity-75 rounded-3">
+    <div class="col-md-6 mb-md-0 p-md-4">
+    <img src="@Model.foto_noticia" class="w-100" alt="...">
+    </div>
+    <div class="col-md-6 p-4 ps-md-0">
+    <h5 class="mt-0">@Model.titulo</h5>
+    <p>@Model.contenido</p>
+    <p><em>Escritor: @Model.escritor, Editor: @Model.editor</em></p>
+    </div>
+</div>
+

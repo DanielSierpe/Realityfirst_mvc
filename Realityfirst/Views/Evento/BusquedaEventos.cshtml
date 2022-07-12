@@ -1,0 +1,71 @@
+﻿@using RealityFirst.Models
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+
+    <div class="container" >
+        <nav class="rounded-pill shadow bg-light" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb align-content-center">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index"><div class="bg-image hover-overlay"></div></a></li>
+                
+            </ol>
+        </nav>
+    </div>
+
+    <div class=container align=center>
+      <h1 class="display-3 text-white">Proximos Eventos</h1>
+      <br>
+    </div>
+
+    <div class="container shadow-lg p-3 mb-5 bg-secondary rounded bg-opacity-0">
+        <!-- Busqueda -->
+        <input class="form-control me-2" type="Buscar" id="search" onkeyup="busquedaDeEventos()" name="search" placeholder="Filtrar" aria-label="Buscar"> 
+        <table class="table text-white">
+          <thead>
+            <tr>
+              <th scope="col">Artista</th>
+              <th scope="col">Nombre evento</th>
+              <th scope="col">Lugar evento</th>
+              <th scope="col">Fecha y hora</th>
+              <th scope="col">ver mas detalles</th>
+            </tr>
+          </thead>
+          <tbody id="tabla">
+              @foreach (EventoModel evento in Model)
+                {
+                  <tr>  
+                        <td>@evento.nombre_artista</td>
+                        <td>@evento.nombre_evento</td>
+                        <td>@evento.lugar_evento</td>
+                        <td>@evento.fecha_evento: @evento.inicio hasta @evento.fin</td>
+                        <td><a href="/Evento/Eventos/@evento.id_artista" class="btn btn-dark text-white">Ver mas detalles</a></td>
+                  </tr>
+             }
+          </tbody>
+    </div>
+      
+    <!-- Java Script -->
+    
+@section Scripts{
+    <script type="text/javascript">
+        function busquedaDeEventos() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tabla");
+            tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                } else {
+                tr[i].style.display = "none";
+                }
+            }       
+          }
+        } 
+    </script>
+}

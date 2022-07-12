@@ -1,33 +1,50 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Realityfirst.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using RealityFirst.Models;
+using RealityFirst.Servicio;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
+using Realityfirst.Models;
 
-namespace Realityfirst.Controllers
+namespace RealityFirst.Controllers
 {
-
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        IConfiguration config;
+        ArtistaServicio artista;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IConfiguration config)
         {
-            _logger = logger;
-        }
+            this.config = config;
+            string ConnectionString = config.GetConnectionString("DBRealityFirst");
+            artista = new ArtistaServicio(ConnectionString);
 
+        }
         public IActionResult Index()
         {
-            return View();
+            IList<ArtistaModel> lista = artista.GetAll();
+            return View("index", lista);
         }
 
-        public IActionResult Privacy(int id)
+        public IActionResult Privacy()
         {
             return View();
         }
+
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+
+        public IActionResult IniciarSesion()
+        {
+            HttpContext.Session.Remove("usuario");
+            return RedirectToAction("Login", "Acceso");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
